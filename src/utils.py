@@ -29,7 +29,6 @@ from tqdm.auto import tqdm
 from stockstats import StockDataFrame as sdf
 from ta import *
 from matplotlib import pyplot as plt
-import winsound
 import time
 
 
@@ -138,14 +137,6 @@ def plot(y, title, output_path, x=None):
 def col1_gt_col2(col1, col2, df):
     compare_series = df[col1] > df[col2]
     print(df.iloc[compare_series[compare_series == True].index])
-
-
-def sound_alert(repeat_count=5):
-    duration = 1000  # millisecond
-    freq = 440  # Hz
-    for i in range(0, repeat_count):
-        winsound.Beep(freq, duration)
-        time.sleep(1)
 
 
 def console_pretty_print_df(df):

@@ -21,9 +21,10 @@ from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 from sklearn.utils import compute_class_weight
 from tqdm.auto import tqdm
 from logger import Logger
-from secrets import api_key
+
 from utils import *
 
+api_key='XHFAPK9KR29POERS'
 
 class DataGenerator:
     def __init__(self, company_code, data_path='./stock_history', output_path='./outputs', strategy_type='original',
@@ -121,7 +122,7 @@ class DataGenerator:
             if row_counter >= window_size - 1:
                 window_begin = row_counter - (window_size - 1)
                 window_end = row_counter
-                window_middle = (window_begin + window_end) / 2
+                window_middle = int((window_begin + window_end) / 2)
 
                 min_ = np.inf
                 min_index = -1

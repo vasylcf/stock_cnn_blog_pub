@@ -29,7 +29,7 @@ from sklearn.utils.class_weight import compute_class_weight
 
 from data_generator import DataGenerator, plt
 from logger import Logger
-from secrets import api_key
+
 from utils import download_save, seconds_to_minutes
 
 config = tf.compat.v1.ConfigProto()
@@ -58,7 +58,7 @@ if not os.path.exists(OUTPUT_PATH):
     print("Output Directory created", OUTPUT_PATH)
 
 BASE_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED" \
-           "&outputsize=full&apikey=" + api_key + "&datatype=csv&symbol="  # api key from alpha vantage service
+           "&outputsize=full&apikey=" + 'XHFAPK9KR29POERS' + "&datatype=csv&symbol="  # api key from alpha vantage service
 data_file_name = company_code + ".csv"
 PATH_TO_COMPANY_DATA = os.path.join(PATH_TO_STOCK_HISTORY_DATA, company_code, data_file_name)
 print(INPUT_PATH)
